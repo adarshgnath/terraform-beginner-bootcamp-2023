@@ -19,3 +19,23 @@ variable "bucket_name" {
     error_message = "The bucket name must be between 3 and 63 characters, start and end with a lowercase letter or number, and can contain only lowercase letters, numbers, hyphens, and dots."
   }
 }
+
+variable "path_index_html" {
+  description = "path showing to index.html file"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.path_index_html)
+    error_message = "provide path for index html doesnt exist"
+  }
+}
+
+variable "path_error_html" {
+  description = "path showing to error.html file"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.path_error_html)
+    error_message = "provide path for error html doesnt exist"
+  }
+}
