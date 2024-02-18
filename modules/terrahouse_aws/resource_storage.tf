@@ -29,6 +29,11 @@ resource "aws_s3_object" "index_html" {
   source = var.path_index_html
   content_type = "text/html"
   etag = filemd5(var.path_index_html)
+  lifecycle {
+    ignore_changes = [etag]
+    replace_triggered_by = [terraform_data.content_variable]
+
+  }
 }
 
 resource "aws_s3_object" "error_html" {
@@ -37,6 +42,11 @@ resource "aws_s3_object" "error_html" {
   source = var.path_error_html
   content_type = "text/html"
   etag = filemd5(var.path_error_html)
+  lifecycle {
+    ignore_changes = [etag]
+    replace_triggered_by = [terraform_data.content_variable]
+
+  }
 }
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
@@ -60,4 +70,8 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
       }
     }
   })
+}
+
+resource "terraform_data" "content_variable" {
+  input = var.content_variable
 }
