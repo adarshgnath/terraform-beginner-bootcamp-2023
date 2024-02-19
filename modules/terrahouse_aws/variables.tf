@@ -40,6 +40,11 @@ variable "path_error_html" {
   }
 }
 
+variable "assets_path" {
+  description = "path showing to Assets files"
+  type        = string
+}
+
 variable "content_variable" {
   type        = number
   description = "The version of the content"

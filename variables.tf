@@ -17,3 +17,7 @@ variable "path_error_html" {
 variable "content_variable" {
   type        = number
 }
+
+variable "assets_path" {
+  type        = string
+}

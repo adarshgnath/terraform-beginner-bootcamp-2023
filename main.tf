@@ -24,4 +24,5 @@ module "terrahouse_aws" {
   path_index_html = var.path_index_html
   path_error_html = var.path_index_html
   content_variable = var.content_variable
+  assets_path = var.assets_path
 }
