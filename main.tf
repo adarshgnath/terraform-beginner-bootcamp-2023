@@ -8,7 +8,7 @@ terraform {
       version = "1.0.0"
     }
   }
-}
+
   #backend "remote" {
   #  hostname = "app.terraform.io"
   #  organization = "ExamPro"
@@ -17,12 +17,14 @@ terraform {
   #    name = "terra-house-1"
   #  }
   #}
-  #cloud {
-  #  organization = "ExamPro"
-  #  workspaces {
-  #    name = "terra-house-1"
-  #  }
-  #}
+  cloud {
+   organization = "KUMOFY"
+   workspaces {
+     name = "terrahouse-1"
+   }
+  }
+  
+}
 provider "terratowns" {
   # endpoint = "http://localhost:4567/api"
   endpoint = var.terratowns_endpoint
