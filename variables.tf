@@ -1,4 +1,12 @@
-variable "user_uuid" {
+variable "terratowns_endpoint" {
+  type        = string
+}
+
+variable "terratowns_user_uuid" {
+  type        = string
+}
+
+variable "access_token" {
   type        = string
 }
 
